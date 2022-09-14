@@ -1,0 +1,8 @@
+CREATE TABLE transactions (
+	id int UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+	date datetime NOT NULL,
+    checkNumber int NOT NULL,
+    description varchar(255) NOT NULL,
+    amount float NOT NULL,
+    namedCurrency varchar(255) NOT NULL
+)

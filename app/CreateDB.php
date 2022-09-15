@@ -13,33 +13,33 @@ class createDB extends DBModel
         $parser = new Parser;
         $data = $parser->parseFile($count, $files);
 
-        #try {
-        $this->db->beginTransaction();
+        try {
+            $this->db->beginTransaction();
 
-        $stmt = $this->db->prepare('INSERT INTO transactions (date, checkNumber, description, amount, namedCurrency)
+            $stmt = $this->db->prepare('INSERT INTO transactions (date, checkNumber, description, amount, namedCurrency)
                                         VALUES (:date, :checkNumber, :description, :amount, "USD")');
 
 
-        foreach ($data as $value) {
-            $countData = count($value);
+            foreach ($data as $value) {
+                $countData = count($value);
 
-            for ($i = 0; $i < $countData; ++$i) {
+                for ($i = 0; $i < $countData; ++$i) {
 
-                $stmt->bindValue('date', $value[$i]['date']);
-                $stmt->bindValue('checkNumber', $value[$i]['checkNumber']);
-                $stmt->bindValue('description', $value[$i]['description']);
-                $stmt->bindValue('amount', $value[$i]['amount']);
+                    $stmt->bindValue('date', $value[$i]['date']);
+                    $stmt->bindValue('checkNumber', $value[$i]['checkNumber']);
+                    $stmt->bindValue('description', $value[$i]['description']);
+                    $stmt->bindValue('amount', $value[$i]['amount']);
 
-                $stmt->execute();
+                    $stmt->execute();
+                }
             }
-        }
 
-        $this->db->commit();
-        /*} catch (\Exception) {
+            $this->db->commit();
+        } catch (\Exception) {
             if ($this->db->inTransaction()) {
                 $this->db->rollback();
             }
             throw new DBCommitException;
-        }*/
+        }
     }
 }

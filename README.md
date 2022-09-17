@@ -15,6 +15,6 @@ and writes transactions on view;
 
 Practiced
 ✅ MVC Pattern
-✅ MVC Routing
-✅ MVC MySQL
-✅ MVC UnitTesting
+✅ Routing
+✅ MySQL
+✅ UnitTesting

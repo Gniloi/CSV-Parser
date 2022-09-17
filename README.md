@@ -14,7 +14,7 @@ ON /transactions parses DB
 and writes transactions on view;
 
 Practiced
-✅. MVC Pattern
-✅. MVC Routing
-✅. MVC MySQL
-✅. MVC UnitTesting
+✅ MVC Pattern
+✅ MVC Routing
+✅ MVC MySQL
+✅ MVC UnitTesting

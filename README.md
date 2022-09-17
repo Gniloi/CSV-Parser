@@ -6,12 +6,15 @@ Main Langugae: PHP
 
 Using: PHP, MySQL, Ngnix, Composer, Docker
 
-The main goal of this project:
-MVC pattern, Routing ,MySQL, UnitTesting
-      
-
-Takes uploaded CSV file on home page ('/')
+Project Description:
+Simple App that takes uploaded CSV file on home page ('/')
 Parses it and saves the Data to DB;
 
-ON GET('/transactions') parses DB
+ON /transactions parses DB
 and writes transactions on view;
+
+Practiced
+✅. MVC Pattern
+✅. MVC Routing
+✅. MVC MySQL
+✅. MVC UnitTesting

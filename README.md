@@ -8,12 +8,11 @@ Using: PHP, MySQL, Ngnix, Composer, Docker
 
 Project Description:
 Simple App that takes uploaded CSV file on home page ('/')
-Parses it and saves the Data to DB;
-
+Parses it and saves the Data to DB
 ON /transactions parses DB
 and writes transactions on view;
 
-Practiced
+Practiced:
 ✅ MVC Pattern
 ✅ Routing
 ✅ MySQL

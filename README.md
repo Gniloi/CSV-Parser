@@ -1,5 +1,7 @@
 # CSV parser project
 
+![](https://github.com/NNishnianidze/CSV-Parser/blob/main/Example.gif)
+
 First MVC pattern project focusing on Backend
 
 Main Langugae: PHP

@@ -17,3 +17,6 @@ Practiced:
 ✅ Routing
 ✅ MySQL
 ✅ UnitTesting
+
+Added:
+Pagination

@@ -10,7 +10,7 @@ class MakeTransaction
 {
     static function calculateTotals(array $data): array
     {
-        $totals = ['netTotal' => 0, 'totalIncome' => 0, 'totalExpense' => 0];
+        static $totals = ['netTotal' => 0, 'totalIncome' => 0, 'totalExpense' => 0];
 
         foreach ($data as $transaction) {
             $totals['netTotal'] += $transaction['amount'];
@@ -31,6 +31,7 @@ class MakeTransaction
 
     static function make(array $transactions): array
     {
+        static $data;
         foreach ($transactions as $transaction) {
             ['date' => $date, 'checkNumber' => $checkNumber, 'description' => $description, 'amount' => $amount, 'namedCurrency' => $namedCurrency] = $transaction;
 

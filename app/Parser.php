@@ -6,7 +6,7 @@ namespace App;
 
 use App\Exceptions\FileNotFoundException;
 
-class Parser extends DBModel
+class Parser
 {
     public function parseFile(int $count, array $files): array
     {
@@ -27,19 +27,6 @@ class Parser extends DBModel
         }
 
         return $dataArr;
-    }
-
-    public function parseDB(): array
-    {
-        $query = 'SELECT date, checkNumber, description, amount, namedCurrency FROM transactions ORDER BY date';
-
-        $stmt = $this->db->prepare($query);
-
-        $stmt->execute();
-
-        $data = $stmt->fetchALL();
-
-        return $data;
     }
 
     public function getTransaction($file, ?callable $transactionHandler = null): array

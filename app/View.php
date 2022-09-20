@@ -11,13 +11,14 @@ class View
     public function __construct(
         protected string $view,
         protected array $data = [],
-        protected array $totals = []
+        protected array $totals = [],
+        protected float $totalPages = 1,
     ) {
     }
 
-    public static function make(string $view, array $data = [], $totals = []): static
+    public static function make(string $view, array $data = [], $totals = [], $totalPages = 1): static
     {
-        return new static($view, $data, $totals);
+        return new static($view, $data, $totals, $totalPages);
     }
 
     public function render(): string

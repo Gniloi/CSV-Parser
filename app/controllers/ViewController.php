@@ -5,25 +5,32 @@ declare(strict_types=1);
 namespace App\Controllers;
 
 use App\View;
+use App\Pegination;
 use App\MakeTransaction;
-
 
 class ViewController
 {
-    public function make(string $vPath, array $data = [], $totals = []): View
+    public function make(string $vPath): View
     {
 
         if ($vPath == "/") {
             return View::make('index');
         }
 
-        if ($vPath == "/transactions") {
-            $transactions = DBParserController::parseDB();
+        if ($vPath == '/transactions') {
+            $totals = [];
 
-            $data = MakeTransaction::make($transactions);
-            $totals = MakeTransaction::calculateTotals($transactions);
+            $paging = new Pegination;
+            $data = $paging->getTransactions();
+
+            if (!empty($data)) {
+                $totals = MakeTransaction::calculateTotals($data);
+                $data = MakeTransaction::make($data);
+            }
+
+            $totalPages = $paging->getTotalPages();
         }
 
-        return View::make($vPath, $data, $totals);
+        return View::make($vPath, $data, $totals, $totalPages);
     }
 }

@@ -2,7 +2,7 @@
 
 ![](https://github.com/NNishnianidze/CSV-Parser/blob/main/Example.gif)
 
-First MVC pattern project focusing on Backend
+MVC pattern project focusing on Backend
 
 Main Langugae: PHP
 
